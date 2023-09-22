@@ -3,7 +3,8 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="format-detection" content="telephone=no">	
+<meta name="format-detection" content="telephone=no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>	
 <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
 
 <style>
@@ -69,6 +70,13 @@ color: #FF0000;
 text-decoration: none;
 }
 
+#arrow{
+width: 5.5vw;
+margin: 0.5vw;
+cursor: pointer;
+z-index:100;
+}
+
 /* ––––– RESPONSIVE –––––––––*/
 
 @media screen and (max-width: 768px) {
@@ -91,6 +99,16 @@ text-underline-offset: 3px;
 Position: relative;
 Width: 30vw;
 Height: 30vw;
+}
+
+#arrow{
+width: 20vw;
+margin: 1vw;
+}
+
+.col01{
+Font-family: 'IBM Plex Mono',monospace;
+Font-size: 0.65em;
 }
 
 #logo{
@@ -641,7 +659,6 @@ Width: 50vw;
 	h384.69v119.15h145.84V0H1168.71z"/>
 	</svg>
 	
-	
 	<div class="infos">
 
 		<div class="col01">
@@ -661,6 +678,32 @@ Width: 50vw;
 
 	</div>
 	
+		<div class="infos">
+	<img id="arrow" src="img/Top_Arrow.png"/>
+	</div>
+	
+	<div class="infos">
+
+		<div class="col01">
+		------------><br>
+		</div>
+		<div class="col01">
+		Back to Top
+		</div>
+
+	</div>
+	
+	<script>
+	window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
+	$("#arrow").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+	</script>
+
 </body>
 
 </html>
